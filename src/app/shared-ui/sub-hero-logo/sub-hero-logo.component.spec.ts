@@ -8,7 +8,7 @@ describe('SubHeroLogoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubHeroLogoComponent ]
+      imports: [ SubHeroLogoComponent ]
     })
     .compileComponents();
 

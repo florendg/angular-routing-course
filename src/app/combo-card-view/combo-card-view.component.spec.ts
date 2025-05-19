@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComboCardViewComponent } from './combo-card-view.component';
+import {BreadcrumbsComponent} from "../shared-ui/breadcrumbs/breadcrumbs.component";
 
 describe('ComboCardViewComponent', () => {
   let component: ComboCardViewComponent;
@@ -8,7 +9,7 @@ describe('ComboCardViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComboCardViewComponent ]
+      imports: [ ComboCardViewComponent, BreadcrumbsComponent ]
     })
     .compileComponents();
 

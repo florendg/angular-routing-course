@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { PieService } from '../../services/pie.service';
+import {Component} from '@angular/core';
+import {PieService} from '../../services/pie.service';
+import {AsyncPipe, NgFor, NgIf} from "@angular/common";
 
 @Component({
-    selector: 'app-side-menu',
-    templateUrl: './side-menu.component.html',
-    styleUrls: ['./side-menu.component.css'],
-    standalone: false
+  selector: 'app-side-menu',
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.css'],
+  imports: [AsyncPipe, NgFor, NgIf]
 })
 export class SideMenuComponent {
   pies$ = this.pieService.filteredPies$;
@@ -13,9 +14,10 @@ export class SideMenuComponent {
 
   constructor(
     private readonly pieService: PieService,
-  ) {}
+  ) {
+  }
 
-  selectPie(id: number){
+  selectPie(id: number) {
     this.pieService.setSelectedPie(id);
   }
 }

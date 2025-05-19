@@ -1,12 +1,16 @@
 import {Component, DestroyRef, inject, OnInit} from '@angular/core';
-import {NavigationStart, Router} from "@angular/router";
+import {NavigationStart, Router, RouterOutlet} from "@angular/router";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {HeaderComponent} from "./header/header.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  imports: [
+    HeaderComponent,
+    RouterOutlet
+  ]
 })
 export class AppComponent implements OnInit {
 
@@ -16,7 +20,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(event => {
       if (event instanceof NavigationStart) {
-        console.log('...N...', event)
       }
     })
   }

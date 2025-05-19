@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {CardComponent} from "./card/card.component";
 
 @Component({
-    selector: 'app-sub-section',
-    templateUrl: './sub-section.component.html',
-    styleUrls: ['./sub-section.component.css'],
-    standalone: false
+  selector: 'app-sub-section',
+  templateUrl: './sub-section.component.html',
+  styleUrls: ['./sub-section.component.css'],
+  imports: [CardComponent]
+
 })
 export class SubSectionComponent {
 
